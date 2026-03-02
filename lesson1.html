@@ -1,134 +1,225 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Level 1 - Interactive Coding Training</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Lesson 1 - Introduction to Medical Coding</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      padding: 20px;
+      max-width: 720px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 18px;
+      border-radius: 12px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    .quick { border-left: 6px solid #58cc02; }
+    .deep { border-left: 6px solid #4a6cf7; }
+    .case { border-left: 6px solid #ff9800; }
+
+    .xp-box {
+      background: white;
+      padding: 14px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .progress-container {
+      background: #ddd;
+      height: 14px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #58cc02, #46a302);
+      transition: 0.4s;
+    }
+
     .option-btn {
       display: block;
-      margin: 8px 0;
+      width: 100%;
       padding: 10px;
-      background: #f0f4ff;
-      border: 1px solid #4a6cf7;
+      margin: 8px 0;
+      border: none;
+      border-radius: 8px;
+      background: #e5edff;
       cursor: pointer;
-      border-radius: 6px;
+      font-weight: bold;
     }
 
     .option-btn:hover {
-      background: #dbe4ff;
+      background: #d2dcff;
     }
 
     .feedback {
       margin-top: 10px;
       font-weight: bold;
     }
-
-    .level-box {
-      background: #eef2ff;
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-
-    .progress-bar-container {
-      width: 100%;
-      background: #ddd;
-      border-radius: 20px;
-      height: 20px;
-      margin-top: 10px;
-    }
-
-    .progress-bar {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, #4a6cf7, #7b8cff);
-      border-radius: 20px;
-      transition: 0.4s;
-    }
   </style>
 </head>
+
 <body>
 
-<div class="container" style="margin-top:40px;">
+<h2>🏥 Lesson 1: Introduction to Medical Coding</h2>
 
-  <h2>🎮 Level 1: Medical Coding Rookie</h2>
-
-  <div class="level-box">
-    <p><strong>XP:</strong> <span id="xp">0</span></p>
-    <p><strong>Level:</strong> <span id="level">Beginner Coder</span></p>
-
-    <div class="progress-bar-container">
-      <div id="progressBar" class="progress-bar"></div>
-    </div>
+<!-- XP BOX -->
+<div class="xp-box">
+  <strong>XP:</strong> <span id="xp">0</span>
+  <div class="progress-container">
+    <div id="progressBar" class="progress-bar"></div>
   </div>
+</div>
 
-  <div class="card">
-    <h3>Case 1</h3>
-    <p>Doctor documents Type 2 Diabetes. Which coding system first?</p>
+<!-- STREAK BOX -->
+<div class="xp-box">
+  🔥 Daily Streak: <strong><span id="streak">0</span></strong> days
+</div>
 
-    <button class="option-btn" onclick="answer(true)">ICD-10</button>
-    <button class="option-btn" onclick="answer(false)">CPT</button>
+<!-- QUICK LEARN -->
+<div class="card quick">
+  <h3>⚡ Quick Learn</h3>
+  <p>
+    Medical coding converts medical documentation into standardized codes.
+  </p>
+  <ul>
+    <li>ICD-10 → Diagnosis</li>
+    <li>CPT → Procedures</li>
+    <li>HCPCS → Equipment</li>
+  </ul>
+  <p><strong>Simple idea:</strong> Coding = Medical Translation.</p>
+</div>
 
-    <div id="feedback" class="feedback"></div>
-  </div>
+<!-- DEEP DIVE -->
+<div class="card deep">
+  <h3>🔍 Deep Dive</h3>
+  <p>
+    Coders review clinical documentation including physician notes,
+    lab results, and discharge summaries.
+  </p>
+  <ol>
+    <li>Identify principal diagnosis</li>
+    <li>Identify secondary diagnoses</li>
+    <li>Determine procedures performed</li>
+    <li>Select most specific codes</li>
+    <li>Follow official coding guidelines</li>
+  </ol>
+  <p>
+    Accurate coding ensures correct reimbursement and prevents claim denials.
+  </p>
+</div>
 
-  <br>
+<!-- WORKFLOW -->
+<div class="card">
+  <h3>🏥 Hospital Workflow</h3>
+  <ol>
+    <li>Patient receives treatment</li>
+    <li>Doctor documents visit</li>
+    <li>Coder assigns codes</li>
+    <li>Claim sent to insurance</li>
+    <li>Payment processed</li>
+  </ol>
+</div>
 
-  <div class="card">
-    <h3>Case 2</h3>
-    <p>Patient comes for office visit. Which system reports procedure?</p>
+<!-- CASE STUDY -->
+<div class="card case">
+  <h3>📄 Case Study</h3>
+  <blockquote>
+    “55-year-old male with Type 2 Diabetes.
+     Routine follow-up visit.”
+  </blockquote>
+  <p>
+    Diagnosis → Diabetes  
+    Procedure → Office Visit
+  </p>
+</div>
 
-    <button class="option-btn" onclick="answer(true)">CPT</button>
-    <button class="option-btn" onclick="answer(false)">ICD-10</button>
-  </div>
+<!-- PRACTICE -->
+<div class="card">
+  <h3>🎮 Practice</h3>
+  <p>Which coding system is used for diagnosis?</p>
 
-  <br>
+  <button class="option-btn" onclick="check(true)">ICD-10</button>
+  <button class="option-btn" onclick="check(false)">CPT</button>
 
-  <div class="card" style="text-align:center;">
-    <button onclick="completeLesson()" class="btn">
-      🚀 Finish Level
-    </button>
-  </div>
+  <div id="feedback" class="feedback"></div>
+</div>
 
+<!-- KEY TAKEAWAYS -->
+<div class="card">
+  <h3>📝 Key Takeaways</h3>
+  <ul>
+    <li>Medical coding translates documentation into codes</li>
+    <li>ICD-10 = Diagnosis</li>
+    <li>CPT = Procedure</li>
+    <li>Accuracy prevents insurance denials</li>
+  </ul>
 </div>
 
 <script>
 let xp = parseInt(localStorage.getItem("xp")) || 0;
+let streak = parseInt(localStorage.getItem("streak")) || 0;
+let lastVisit = localStorage.getItem("lastVisit");
 
 function updateUI() {
   document.getElementById("xp").innerText = xp;
-
-  let levelText = "Beginner Coder";
-
-  if (xp >= 100) {
-    levelText = "Certified Coder 🏆";
-  } else if (xp >= 50) {
-    levelText = "Junior Coder 🔵";
-  }
-
-  document.getElementById("level").innerText = levelText;
+  document.getElementById("streak").innerText = streak;
 
   let progress = Math.min((xp / 100) * 100, 100);
   document.getElementById("progressBar").style.width = progress + "%";
 }
 
-function answer(correct) {
+function check(correct) {
   if (correct) {
     xp += 10;
     localStorage.setItem("xp", xp);
-    document.getElementById("feedback").innerHTML = "✅ +10 XP!";
+    document.getElementById("feedback").innerHTML = "✅ Correct! +10 XP";
   } else {
-    document.getElementById("feedback").innerHTML = "❌ Try again.";
+    document.getElementById("feedback").innerHTML = "❌ Incorrect. Try again.";
   }
-
   updateUI();
 }
 
-function completeLesson() {
-  localStorage.setItem("lesson1", "done");
-  alert("Level Completed! 🎉");
+function updateStreak() {
+  const today = new Date().toDateString();
+
+  if (!lastVisit) {
+    streak = 1;
+  } else {
+    const lastDate = new Date(lastVisit);
+    const currentDate = new Date(today);
+    const diffTime = currentDate - lastDate;
+    const diffDays = diffTime / (1000 * 60 * 60 * 24);
+
+    if (diffDays === 1) {
+      streak += 1;
+    } else if (diffDays > 1) {
+      streak = 1;
+    }
+  }
+
+  localStorage.setItem("streak", streak);
+  localStorage.setItem("lastVisit", today);
 }
 
+updateStreak();
 updateUI();
 </script>
 
