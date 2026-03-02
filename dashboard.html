@@ -1,83 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Dashboard - CodeMed Academy</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="style.css">
+  <title>Dashboard - CodeMed Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
+<body style="font-family:Arial; padding:20px; max-width:600px; margin:auto;">
 
-<!-- NAVBAR -->
-<nav>
-    <div class="container nav-wrapper">
-        <div class="logo">CodeMed Academy</div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="modules.html">Modules</a></li>
-            <li><a href="quiz1.html">Quiz</a></li>
-        </ul>
-    </div>
-</nav>
+<h2>📊 Your Performance Dashboard</h2>
 
-<!-- DASHBOARD SECTION -->
-<section class="section">
-    <div class="container">
+<p><strong>Total XP:</strong> <span id="xp"></span></p>
+<p><strong>🔥 Streak:</strong> <span id="streak"></span> days</p>
+<p><strong>❤️ Lives:</strong> <span id="lives"></span></p>
 
-        <h2 class="section-title">Student Dashboard</h2>
+<script>
+document.getElementById("xp").innerText =
+  localStorage.getItem("xp") || 0;
 
-        <!-- Progress Card -->
-        <div class="card">
-            <h3>Your Course Progress</h3>
+document.getElementById("streak").innerText =
+  localStorage.getItem("streak") || 0;
 
-            <div class="progress-container">
-                <div id="progress-bar" class="progress-bar">0%</div>
-            </div>
-
-            <p id="progress-text" style="margin-top:10px;">
-                Complete all lessons to unlock certificate.
-            </p>
-        </div>
-
-        <br>
-
-        <!-- Lessons Status -->
-        <div class="card">
-            <h3>Lesson Status</h3>
-            <ul>
-                <li>Lesson 1: Introduction</li>
-                <li>Lesson 2: ICD-10 Basics</li>
-                <li>Lesson 3: CPT Overview</li>
-            </ul>
-        </div>
-
-        <br>
-
-        <!-- Certificate Section -->
-        <div class="card" style="text-align:center;">
-            <h3>Certificate</h3>
-
-            <a href="certificate.html"
-               id="certificateBtn"
-               class="btn"
-               style="display:none;">
-               Download Certificate
-            </a>
-
-            <p style="margin-top:10px;">
-                (Unlocked after 100% completion)
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<footer>
-    © 2026 CodeMed Academy — Learn. Practice. Succeed.
-</footer>
-
-<script src="script.js"></script>
+let lives = localStorage.getItem("lives") || 3;
+document.getElementById("lives").innerText =
+  "❤️".repeat(lives);
+</script>
 
 </body>
 </html>
